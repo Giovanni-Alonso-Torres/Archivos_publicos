@@ -1,0 +1,5 @@
+# Archivos temporales de Juoyter Notebook
+*.ipynb_checkpoints
+
+# Archivo de icono de Windows
+desktop.ini
