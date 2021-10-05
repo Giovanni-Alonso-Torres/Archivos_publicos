@@ -13,18 +13,18 @@ from scipy.integrate import quad_vec
 # In[2]:
 
 
-Nf = 1000
+Nf = 1000                       # Número de Fresnel
 N = 1000
 lim = 1
-ρ = np.linspace(-lim, lim, N)
+ρ = np.linspace(-lim, lim, N)   # Rango a graficar
 
 
 # In[3]:
 
 
-f = lambda s: s*np.exp(1j*np.pi*s**2)*sc.jv(0,4*np.pi*np.sqrt(Nf)*ρ*s)
-Uf, err = quad_vec(f, 0, np.sqrt(Nf))
-If = 4*np.pi**2*abs(Uf)**2
+f = lambda s: s*np.exp(1j*np.pi*s**2)*sc.jv(0,4*np.pi*np.sqrt(Nf)*ρ*s)   # Integrando
+Uf, err = quad_vec(f, 0, np.sqrt(Nf))                                    # Realización de la integral
+If = 4*np.pi**2*abs(Uf)**2                                               # Intensidad de Fresnel
 
 
 # In[4]:
@@ -107,7 +107,7 @@ f = lambda s: s*np.exp(1j*np.pi*s**2)*sc.jv(0,4*np.pi*np.sqrt(Nf)*ρ*s)
 Uf, err = quad_vec(f, 0, np.sqrt(Nf))
 If = 4*np.pi**2*abs(Uf)**2
 Ρ = np.linspace(-lim, lim, 100)
-Ifh = (np.pi*Nf*2*sc.jv(1,4*np.pi*Nf*Ρ)/(4*np.pi*Nf*Ρ))**2
+Ifh = (np.pi*Nf*2*sc.jv(1,4*np.pi*Nf*Ρ)/(4*np.pi*Nf*Ρ))**2   # Intensidad de Fraunhofer
 
 
 # In[13]:
